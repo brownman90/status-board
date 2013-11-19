@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blue Button Status Board</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="section">
+    <div class="content">
+      <div class="bb-logo"></div>
+      <h1 class="title">Blue Button Status Board</h1>
+      
+      <div id="items"></div>
+      
+    </div>
+  </div>
+  
+  <script>
+    var items = [
+      {
+        title: "Blue Button Basic",
+        status: "completed",
+        description: "A patient can download their health record in any electronic form"
+      },
+      {
+        title: "Blue Button Direct",
+        status: "in-progress",
+        description: "A patient can transmit their health record in electronic form to an outside provider, or a third-party application or service using Direct."
+      },
+      {
+        title: "Download Health Summary in C32",
+        status: "completed",
+        description: "A patient can download their health summary as a C32 document."
+      },
+      {
+        title: "Transmit Health Summary in C32 using Direct",
+        status: "in-progress",
+        description: "A patient can transmit their health summary in C32 format using Direct."
+      },
+      {
+        title: "Download Health Summary in CCDA",
+        status: "not-scheduled",
+        description: "A patient can download their health summary as a CCDA document."
+      },
+      {
+        title: "Transmit Health Summary in CCDA using Direct",
+        status: "not-scheduled",
+        description: "A patient can transmit their health summary in CCDA format using Direct."
+      },
+      {
+        title: "Blue Button REST",
+        status: "not-scheduled",
+        description: "A patient can connect a web or mobile health application to their health record."
+      }
+    ];
+    
+    var itemTemplate = "" +
+    "<div class='item {status}'>" +
+      "<div class='title'>" +
+        "<a href='Javascript:toggle(\"{i}\")'>{title}</a>" +
+      "</div>" +
+      "<div class='status'>{status-text}</div>" +
+      "<div id='description_{i}' class='description'>" +
+        "<p>{description}</p>" +
+      "</div>" +
+    "</div>";
+    
+    var html = "";
+    
+    for (var i = 0; i < items.length; i++) {
+      
+      if (items[i].status != "na") {
+        var tmp = itemTemplate
+          .replace(/{i}/g, i)
+          .replace("{status}", items[i].status)
+          .replace("{title}", items[i].title)
+          .replace("{status-text}", items[i].status.replace('-', ' '))
+          .replace("{description}", items[i].description);
+        html += tmp;
+      };
+    }
+    
+    var el = document.getElementById('items');
+    el.innerHTML = html;
+    
+    
+    for (var i = 0; i < items.length; i++) {
+      el = document.getElementById('description_' + i);
+      if (el.style.display == '') {
+        el.style.display = 'none';
+      }
+    }
+    
+    
+    function toggle (id) {
+      var el = document.getElementById('description_' + id);
+      
+      console.log(el);
+      console.log(el.style.display);
+      
+      if (el.style.display == 'none') {
+        el.style.display = 'block';
+      } else {
+        el.style.display = 'none';
+      }
+    }
+  </script>
+  
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,116 @@
+/* Resets */
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q,
+samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article,
+aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 18px;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.section {
+  margin: 0 auto;
+  width: 600px;
+  padding: 25px 0 30px 0;
+}
+
+.content {
+  padding: 15px;
+}
+
+h1.title {
+  color: #116bff;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+.bb-logo {
+  width: 75px;
+  height: 75px;
+  background: url(/../img/bb_logo.svg);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+}
+
+.item {
+  margin-bottom: 15px;
+  clear: both;
+}
+
+.item .title {
+  float: left;
+  padding: 5px;
+  border: 2px solid;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-bottom: 15px;
+  width: 417px;
+}
+
+.item .title a {
+  text-decoration: none;
+}
+
+.item .title a:hover {
+  text-decoration: underline;
+}
+
+.item .status {
+  border: 2px solid;
+  color: white;
+  float: right;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 5px;
+  width: 125px;
+  text-align: center;
+}
+
+.item.not-scheduled .title { border-color: #ff0000; }
+.item.not-scheduled .title a { color: #ff0000; }
+.item.not-scheduled .status {
+  background-color: #ff0000;
+  border-color: #ff0000;
+}
+.item.in-progress .title { border-color: #ff8d00; }
+.item.in-progress .title a { color: #ff8d00; }
+.item.in-progress .status {
+  background-color: #ff8d00;
+  border-color: #ff8d00;
+}
+
+.item.completed .title { border-color: #44b600; }
+.item.completed .title a { color: #44b600; }
+.item.completed .status {
+  background-color: #44b600;
+  border-color: #44b600;
+}
+
+.item .description {
+  display: none;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  clear: both;
+}
+
+.item .description p {
+  font-size: 16px;
+  color: #404040;
+}
+
+
+
+

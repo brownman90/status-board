@@ -1,0 +1,6 @@
+name: Blue Button Status Board
+markdown: redcarpet
+pygments: true
+
+redcarpet:
+  extensions: ['hard_wrap', 'autolink']
